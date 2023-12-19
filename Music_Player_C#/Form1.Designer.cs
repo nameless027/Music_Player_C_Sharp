@@ -45,8 +45,8 @@
             this.lbl_track_start = new System.Windows.Forms.Label();
             this.lbl_track_end = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
             this.panel1.SuspendLayout();
@@ -137,6 +137,7 @@
             this.p_bar.Name = "p_bar";
             this.p_bar.Size = new System.Drawing.Size(600, 13);
             this.p_bar.TabIndex = 6;
+            this.p_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_bar_MouseDown);
             // 
             // track_list
             // 
@@ -171,6 +172,7 @@
             this.track_volume.Size = new System.Drawing.Size(50, 132);
             this.track_volume.TabIndex = 10;
             this.track_volume.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.track_volume.Scroll += new System.EventHandler(this.track_volume_Scroll);
             // 
             // label1
             // 
@@ -229,6 +231,11 @@
             this.panel1.Size = new System.Drawing.Size(634, 182);
             this.panel1.TabIndex = 15;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // player
             // 
             this.player.Dock = System.Windows.Forms.DockStyle.Top;
@@ -240,19 +247,14 @@
             this.player.TabIndex = 9;
             this.player.Enter += new System.EventHandler(this.player_Enter);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // MusicPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(634, 339);
-            this.Controls.Add(this.lbl_track_end);
             this.Controls.Add(this.lbl_track_start);
+            this.Controls.Add(this.lbl_track_end);
             this.Controls.Add(this.track_list);
             this.Controls.Add(this.p_bar);
             this.Controls.Add(this.btn_open);

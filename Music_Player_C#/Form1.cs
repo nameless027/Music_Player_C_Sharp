@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Music_Player_C_
 {
@@ -15,6 +16,9 @@ namespace Music_Player_C_
         public MusicPlayer()
         {
             InitializeComponent();
+            track_volume.Value = 50;
+            lbl_volume.Text = "50%";
+            
         }
 
         string[] paths, files;
@@ -37,6 +41,16 @@ namespace Music_Player_C_
         {
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
+            try
+            {
+                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
+                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
+                pic_art.Image = Image.FromStream(new MemoryStream(bin));
+            }
+            catch
+            {
+
+            }
 
         }
         private void btn_stop_Click(object sender, EventArgs e)
@@ -87,6 +101,8 @@ namespace Music_Player_C_
                 track_list.SelectedIndex = track_list.SelectedIndex - 1;
             }
         }
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
@@ -98,14 +114,25 @@ namespace Music_Player_C_
             {
                 lbl_track_start.Text = player.Ctlcontrols.currentPositionString;
                 lbl_track_end.Text = player.Ctlcontrols.currentItem.durationString.ToString();
-
-
             }
             catch 
             { 
 
             
             }
+        }
+
+
+        private void track_volume_Scroll(object sender, EventArgs e)
+        {
+            player.settings.volume = track_volume.Value;
+            lbl_volume.Text  = track_volume.Value.ToString() + "%";
+        }
+        private void p_bar_MouseDown(object sender, MouseEventArgs e)
+        {
+
+            player.Ctlcontrols.currentPosition = player.currentMedia.duration * e.X / p_bar.Width;
+
         }
 
     }
