@@ -90,12 +90,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\png-clipart-music-play-switch-icon-music-player-music-player-interface.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\free-icon-cd-player-3578559.png" />
-  </ItemGroup>
-  <ItemGroup>
     <COMReference Include="AxWMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
       <VersionMajor>1</VersionMajor>
