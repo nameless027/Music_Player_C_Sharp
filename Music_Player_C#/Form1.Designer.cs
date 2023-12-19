@@ -202,7 +202,7 @@
             this.lbl_track_start.AutoSize = true;
             this.lbl_track_start.Font = new System.Drawing.Font("Digiface", 21.73585F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_track_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_track_start.Location = new System.Drawing.Point(18, 27);
+            this.lbl_track_start.Location = new System.Drawing.Point(18, 18);
             this.lbl_track_start.Name = "lbl_track_start";
             this.lbl_track_start.Size = new System.Drawing.Size(85, 39);
             this.lbl_track_start.TabIndex = 13;
@@ -213,7 +213,7 @@
             this.lbl_track_end.AutoSize = true;
             this.lbl_track_end.Font = new System.Drawing.Font("Digiface", 21.73585F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_track_end.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_track_end.Location = new System.Drawing.Point(527, 27);
+            this.lbl_track_end.Location = new System.Drawing.Point(527, 18);
             this.lbl_track_end.Name = "lbl_track_end";
             this.lbl_track_end.Size = new System.Drawing.Size(85, 39);
             this.lbl_track_end.TabIndex = 14;
@@ -238,12 +238,11 @@
             // 
             // player
             // 
-            this.player.Dock = System.Windows.Forms.DockStyle.Top;
             this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Location = new System.Drawing.Point(97, 0);
             this.player.Name = "player";
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(634, 66);
+            this.player.Size = new System.Drawing.Size(424, 140);
             this.player.TabIndex = 9;
             this.player.Enter += new System.EventHandler(this.player_Enter);
             // 

@@ -56,6 +56,7 @@ namespace Music_Player_C_
         private void btn_stop_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.stop();
+            p_bar.Value = 0;
         }
 
         private void MusicPlayer_Load(object sender, EventArgs e)
